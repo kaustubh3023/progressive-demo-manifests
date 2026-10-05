@@ -46,11 +46,17 @@ spec:
 
         - pause:
             duration: 30s
+        - analysis:
+            templates:
+              - templateName: success-rate
 
         - setWeight: 40
 
         - pause:
             duration: 30s
+        - analysis:
+            templates:
+               - templateName: success-rate
 
         - setWeight: 60
 
