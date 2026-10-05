@@ -11,6 +11,8 @@ spec:
 
       interval: 30s
 
+      count: 1
+
       successCondition: result[0] >= 0.95
 
       failureLimit: 2
