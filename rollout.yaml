@@ -23,7 +23,7 @@ spec:
 
         - name: progressive-demo
 
-          image: kaustubh3023/progressive-demo:v2
+          image: kaustubh3023/progressive-demo:v3.1
 
           ports:
             - containerPort: 5000
