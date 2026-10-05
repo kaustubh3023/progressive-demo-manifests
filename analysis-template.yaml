@@ -18,7 +18,6 @@ spec:
       provider:
         prometheus:
           address: http://prometheus-server.monitoring.svc.cluster.local
-
           query: |
             sum(
               rate(flask_http_request_total{status="200"}[1m])
