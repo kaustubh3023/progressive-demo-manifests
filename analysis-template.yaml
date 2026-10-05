@@ -8,19 +8,14 @@ metadata:
 spec:
   metrics:
     - name: success-rate
-
       interval: 30s
-
-      count: 1
-
+      count: 3
       successCondition: result[0] >= 0.95
-
-      failureLimit: 2
+      failureLimit: 1
 
       provider:
         prometheus:
           address: http://prometheus-server.monitoring.svc.cluster.local
-
           query: |
             sum(rate(flask_http_request_total{status="200"}[1m]))
             /
