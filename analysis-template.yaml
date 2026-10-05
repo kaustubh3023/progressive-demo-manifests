@@ -6,9 +6,7 @@ metadata:
   namespace: progressive-demo
 
 spec:
-
   metrics:
-
     - name: success-rate
 
       interval: 30s
@@ -16,3 +14,16 @@ spec:
       successCondition: result[0] >= 0.95
 
       failureLimit: 2
+
+      provider:
+        prometheus:
+          address: http://prometheus-server.monitoring.svc.cluster.local
+
+          query: |
+            sum(
+              rate(flask_http_request_total{status="200"}[1m])
+            )
+            /
+            sum(
+              rate(flask_http_request_total[1m])
+            )
